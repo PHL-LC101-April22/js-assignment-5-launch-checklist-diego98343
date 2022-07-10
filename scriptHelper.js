@@ -119,18 +119,19 @@ async function myFetch() {
     let planetsReturned;
 
     planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then( function(response) {
-        planetsReturned=response;
-        console.log(planetsReturned);
+      response.json().then(function(json){
+        console.log(json);
+        
+      })
     });
 
     return planetsReturned;
 }
 
-
+console.log()
 
 function pickPlanet(planets) {
 }
-
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
