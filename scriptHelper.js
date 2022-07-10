@@ -1,6 +1,7 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 
+
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
  
  
@@ -17,7 +18,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    
 }
 
-
 let pilotname = document.forms[0];
 let copilotname= document.forms[0];
 let fuellevels = document.forms[0];
@@ -33,7 +33,9 @@ let list = display.innerHTML= `<ol>
                                   <li>${fuellevels[2].value}</li>
                                   <li>${cargomass[3].value}</li>
                                <ol>`;
- 
+
+
+
 
 function validateInput(testInput) {
 
@@ -103,8 +105,6 @@ function validateInput(testInput) {
     }
     
 };
-
-
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();  
