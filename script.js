@@ -79,12 +79,12 @@ function validateInput(testInput) {
         colorchange.innerHTML=" READY TO LAUNCH"
         colorchange.style.color="green"
         display.style.visibility="visible"
-        return display.innerHTML= `<ol>
-                                     <li>${pilotname[0].value}<li>
-                                     <li>${copilotname[1].value}</li>
-                                     <li>${fuellevels[2].value}</li>
-                                     <li>${cargomass[3].value}</li>
-                                </ol> `;
+        return display.innerHTML= `<ul>
+                                     <li> Pilot Name: ${pilotname[0].value}<li>
+                                     <li> Copilot Name: ${copilotname[1].value}</li>
+                                     <li> Fuel Level: ${fuellevels[2].value}</li>
+                                     <li> Ship weight: ${cargomass[3].value}</li>
+                                </ul> `;
     }
     
 };
