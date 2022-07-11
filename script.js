@@ -12,7 +12,7 @@ let list = display.innerHTML += `<ol>
                                   <li>${pilotname[0].value}<li>
                                   <li>${copilotname[1].value}</li>
                                   <li>${fuellevels[2].value}</li>
-                                  <li>${cargomass[3].value}</li>
+                                  <li>${cargomass[3].value} kg</li>
                                </ol>`;
  
 
@@ -83,7 +83,7 @@ function validateInput(testInput) {
                                      <li> Pilot Name: ${pilotname[0].value}<li>
                                      <li> Copilot Name: ${copilotname[1].value}</li>
                                      <li> Fuel Level: ${fuellevels[2].value}</li>
-                                     <li> Ship weight: ${cargomass[3].value}</li>
+                                     <li> Ship weight: ${cargomass[3].value} kg</li>
                                 </ul> `;
     }
     
@@ -91,25 +91,7 @@ function validateInput(testInput) {
 
 
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();  
-
-    validateInput(list);
-   
-  });
-
   let url ='https://handlers.education.launchcode.org/static/planets.json'
-
-
-async function myFetch2(){
-
-  let planetsretured=await fetch(url);
-  let data= await planetsretured.json();
-   let {planets} =data;
-   console.log(planets)
-
-}
-
 
   async function myFetch() {
     let planetsReturned;
@@ -127,25 +109,31 @@ async function myFetch2(){
       
        return planetDisplay.innerHTML= `<ul>
                              <li> NAME: ${planet.name}<li>
+                             <li> DIAMETER: ${planet.diameter}<li>
                              <li> Distance: ${planet.distance}</li>
                              <li> Number of stars: ${planet.star}</li>
                              <li> Number of moons: ${planet.moons}</li>
                              <img class="avatar" src=${planet.image}>
                            </ul> `;
 
-       
-      
       })
     });
 
 }
 
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();  
+
+    validateInput(list);
+   
+  });
+
+
 window.addEventListener("load", function() {
  
     myFetch()
 
-    myFetch2()
-    
  });
 
 
