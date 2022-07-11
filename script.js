@@ -4,7 +4,7 @@ let copilotname= document.forms[0];
 let fuellevels = document.forms[0];
 let cargomass = document.forms[0];
 
-let planet= document.getElementById("missionTarget");
+let  planetDisplay= document.getElementById("missionTarget");
 let display = document.getElementById("faultyItems");
 let colorchange= document.getElementById("launchStatus");
 let form =document.forms[0];
@@ -125,6 +125,14 @@ async function myFetch2(){
        console.log(planet.star);
        console.log(planet.distance);
       
+       return planetDisplay.innerHTML= `<ul>
+                             <li> NAME: ${planet.name}<li>
+                             <li> Distance: ${planet.distance}</li>
+                             <li> Number of stars: ${planet.star}</li>
+                             <li> Number of moons: ${planet.moons}</li>
+                             <img class="avatar" src=${planet.image}>
+                           </ul> `;
+
        
       
       })
