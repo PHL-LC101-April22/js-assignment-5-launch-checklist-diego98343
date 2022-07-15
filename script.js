@@ -24,9 +24,6 @@ window.addEventListener("load", function() {
  });
 
 
- module.exports.validateInput = validateInput;
- module.exports.myFetch = myFetch;
-
 
  
 
